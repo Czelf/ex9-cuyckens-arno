@@ -58,4 +58,19 @@ app.get('/criteria', function (request, response) {
     });
 });
 
+app.put("/criteria/:criteriumId", function (request, response) {
+    var Criterium = new criterium(
+        request.body.criteriumId,
+        request.body.minAantalPersonen,
+        request.body.treshold
+    );
+    dalCriteria.updateCriterium(request.params.criteriumId, Criterium , function (err, drone) {
+        if (err) {
+            console.log(err);
+        }
+        response.send(Criterium);
+        console.log("Criterium Updated");
+    });
+});
+
 app.listen(4321);
