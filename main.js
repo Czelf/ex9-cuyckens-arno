@@ -2,11 +2,16 @@
  * Created by arnoc on 4/01/2017.
  */
 
-var express =  require('express'); // eenvoudige  webserver in node js
-var parser = require('body-parser'); // extensie op express voor eenvoudig body uit te lezen (slaat input op als javascript object)
+//benodigdheden
+
+var express =  require('express');                  // eenvoudige  webserver in node js
+var parser = require('body-parser');                // extensie op express voor eenvoudig body uit te lezen (slaat input op als javascript object)
 
 var app = express();
 app.use (parser.json());
+
+var mongoose = require('mongoose');                 // mongoose is volgens andere studenten the way to go
+mongoose.connect("mongodb://localhost/examen");     // connectie maken met de mongodb database
 
 //--------------------------------------------
     // source plaatsen

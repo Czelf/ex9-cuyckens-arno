@@ -1,4 +1,6 @@
 /**
  * Created by arnoc on 4/01/2017.
  */
-console.log("hello world");
+// begonnen met npm install mongodb en npm install mongoose
+// omdat gebruik maken van mongoose blijkbaar the way to go is
+
