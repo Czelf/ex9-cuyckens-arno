@@ -12,14 +12,16 @@ app.get('/', function (request, response) {
     response.send("hello world!");
 });
 
-var Book = function(id, name){
-    this.id = id;
-    this.name = name;
+var Plaats = function(plaatsId, plaatsNaam, verdieping, gangTF){
+    this.plaatsId = plaatsId;
+    this.plaatsNaam = plaatsNaam;
+    this.verdieping = verdieping;
+    this.gangTF = gangTF;
 };
 
-app.get('/books', function (request, response) {
-    var books = [new Book(1, 'harry potter'), new Book (2, 'Blinker')];
-    response.send(books);
+app.get('/plaatsen', function (request, response) {
+    var plaatsen = [new Plaats(1, 'lokaal1', 3, false), new Plaats (2, 'lokaal2', 3, false)];
+    response.send(plaatsen);
 });
 
 app.listen(4321);
