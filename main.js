@@ -8,9 +8,9 @@ var parser = require('body-parser'); // extensie op express voor eenvoudig body 
 var app = express();
 app.use (parser.json());
 
-app.get('/', function (request, response) {
-    response.send("hello world!");
-});
+//--------------------------------------------
+    // source plaatsen
+//--------------------------------------------
 
 var Plaats = function(plaatsId, plaatsNaam, verdieping, gangTF){
     this.plaatsId = plaatsId;
