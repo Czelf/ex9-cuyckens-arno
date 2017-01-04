@@ -13,6 +13,10 @@ app.use (parser.json());
 var mongoose = require('mongoose');                 // mongoose is volgens andere studenten the way to go
 mongoose.connect("mongodb://localhost/examen");     // connectie maken met de mongodb database
 
+//inladen data uit storages
+
+var dalPlaatsen = require("./StoragePlaatsen");
+
 //--------------------------------------------
     // source plaatsen
 //--------------------------------------------
@@ -25,8 +29,12 @@ var Plaats = function(plaatsId, plaatsNaam, verdieping, gangTF){
 };
 
 app.get('/plaatsen', function (request, response) {
-    var plaatsen = [new Plaats(1, 'lokaal1', 3, false), new Plaats (2, 'lokaal2', 3, false)];
-    response.send(plaatsen);
+    dalPlaatsen.listAllPlaatsen(function (err, Plaats) {
+        if (err) {
+            throw err;
+        }
+        response.send(plaatsen);
+    });
 });
 
 app.listen(4321);
