@@ -18,7 +18,7 @@ mongoose.connect("mongodb://localhost/examen");     // connectie maken met de mo
 var dalPlaatsen = require("./StoragePlaatsen");
 
 //--------------------------------------------
-    // source plaatsen
+    //  source plaatsen
 //--------------------------------------------
 
 var Plaats = function(plaatsId, plaatsNaam, verdieping, gangTF){
