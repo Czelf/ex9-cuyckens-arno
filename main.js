@@ -16,6 +16,7 @@ mongoose.connect("mongodb://localhost/examen");     // connectie maken met de mo
 //inladen data uit storages
 
 var dalPlaatsen = require("./StoragePlaatsen");
+var dalCriteria = require("./StorageCriteria");
 
 //--------------------------------------------
     //  source plaatsen
@@ -33,7 +34,7 @@ app.get('/plaatsen', function (request, response) {
         if (err) {
             throw err;
         }
-        response.send(plaatsen);
+        response.send(Plaats);
     });
 });
 
@@ -47,5 +48,14 @@ var criterium = function(criteriumId, minAantalPersonen, threshold) {
     this.minAantalPersonen = minAantalPersonen;
     this.threshold = threshold;
 };
+
+app.get('/criteria', function (request, response) {
+    dalCriteria.listAllCriteria(function (err, Criterium) {
+        if (err) {
+            throw err;
+        }
+        response.send(Criterium);
+    });
+});
 
 app.listen(4321);
