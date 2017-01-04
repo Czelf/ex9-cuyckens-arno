@@ -4,3 +4,4 @@
 // begonnen met npm install mongodb en npm install mongoose
 // omdat gebruik maken van mongoose blijkbaar the way to go is
 
+var mongoose = require("mongoose");
