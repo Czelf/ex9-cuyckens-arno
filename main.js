@@ -37,4 +37,15 @@ app.get('/plaatsen', function (request, response) {
     });
 });
 
+
+//--------------------------------------------
+//  source criteria
+//--------------------------------------------
+
+var criterium = function(criteriumId, minAantalPersonen, threshold) {
+    this.criteriumId = criteriumId;
+    this.minAantalPersonen = minAantalPersonen;
+    this.threshold = threshold;
+};
+
 app.listen(4321);
