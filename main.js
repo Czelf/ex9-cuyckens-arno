@@ -8,6 +8,9 @@ var parser = require('body-parser'); // slaat input op als javascript object
 var app = express();
 app.use (parser.json());
 
-console.log("hello world");
+app.get('/', function (request, response) {
+    response.send("hello world!");
+});
+
 
 app.listen(4321);
